@@ -1,0 +1,17 @@
+{
+  "name": "issuebadge",
+  "owner": {
+    "name": "IssueBadge",
+    "email": "support@issuebadge.com"
+  },
+  "metadata": {
+    "description": "IssueBadge skills and MCP server for AI agents"
+  },
+  "plugins": [
+    {
+      "name": "issuebadge",
+      "source": "./",
+      "description": "Issue verifiable certificates and badges from IssueBadge by chat: OAuth 2.1 sign-in, no API key needed."
+    }
+  ]
+}

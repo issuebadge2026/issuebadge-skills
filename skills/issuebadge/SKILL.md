@@ -1,6 +1,11 @@
 ---
 name: issuebadge
 description: Connect an agent to issuebadge.com and exchange data with it. Use when a user wants to issue, verify, revoke or export digital certificates or badges, list their certificate templates, download certificate PDFs, create dynamic QR codes, or wire IssueBadge into another system by API key, OAuth 2.1 or the MCP server.
+license: MIT
+metadata:
+  author: issuebadge
+  version: "1.0.1"
+  homepage: https://issuebadge.com/h/integration/mcp
 ---
 
 # Working with IssueBadge
@@ -14,6 +19,7 @@ IssueBadge (https://issuebadge.com) issues digital certificates and Open Badges.
 | **MCP server with OAuth 2.1** | ChatGPT, Claude, Cursor, VS Code or any MCP client that can open a browser | Add `https://issuebadge-mcp.issuebadge.workers.dev/mcp` with no header. The client discovers the sign-in itself; the user approves the `read` and `write` scopes once. |
 | **MCP server with API key** | MCP clients that cannot open a browser, CI | Same URL with header `Authorization: Bearer <API key>` |
 | **REST API with API key** | Your own code, scripts, no-code tools | Create the key at app.issuebadge.com, Developer, API key. Send it as `Authorization: Bearer <key>` on every request to `https://app.issuebadge.com/api/v1/...` |
+| **Viktor (viktor.com)** | Viktor workspaces | Integrations, Add Custom, MCP Server, paste the MCP URL and sign in; or Add Custom, API with base URL `https://app.issuebadge.com/api/v1` and a bearer token. See the `issuebadge-viktor` skill. |
 | **Agent CLI** | Shell-based agents | `pip install cli-anything-issuebadge`, set `ISSUEBADGE_API_KEY`, run `cli-anything-issuebadge --json <group> <command>` |
 
 OAuth discovery, if you implement a client yourself: an unauthenticated call to the MCP URL returns 401 with a `WWW-Authenticate` header pointing at `/.well-known/oauth-protected-resource`; that names `https://app.issuebadge.com` as the authorization server; read `/.well-known/oauth-authorization-server` there; register with `POST /oauth/register` (dynamic client registration); run the authorization-code flow with PKCE S256; exchange at `/oauth/token`. Access tokens last one year.

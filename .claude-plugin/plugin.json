@@ -1,0 +1,13 @@
+{
+  "name": "issuebadge",
+  "displayName": "IssueBadge",
+  "version": "1.0.1",
+  "description": "Issue verifiable certificates and badges from IssueBadge: skills for connecting by OAuth 2.1 or API key and the hosted MCP server with issue, badge and QR code tools.",
+  "author": { "name": "IssueBadge", "email": "support@issuebadge.com", "url": "https://issuebadge.com" },
+  "homepage": "https://issuebadge.com/h/integration/mcp",
+  "repository": "https://github.com/issuebadge2026/issuebadge-skills",
+  "license": "MIT",
+  "keywords": ["certificates", "badges", "credentials", "issuebadge", "mcp"],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json"
+}

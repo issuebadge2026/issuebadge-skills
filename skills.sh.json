@@ -1,0 +1,5 @@
+{
+  "groupings": [
+    { "name": "IssueBadge", "skills": ["issuebadge", "issuebadge-viktor"] }
+  ]
+}
